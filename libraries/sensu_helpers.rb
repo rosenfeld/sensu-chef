@@ -47,6 +47,7 @@ module Sensu
         end
       rescue Chef::Exceptions::ValidationFailed,
         Chef::Exceptions::InvalidDataBagPath,
+        Chef::Exceptions::InvalidDataBagItemID,
         Net::HTTPServerException => error
         missing_ok ? nil : raise(error)
       end
